@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class MHCustomTabBarController;
+
 @interface MHChildViewController : UIViewController
+
+@property(strong, nonatomic) MHCustomTabBarController *parent;
 
 @end

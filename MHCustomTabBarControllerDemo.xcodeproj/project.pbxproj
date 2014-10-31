@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0ACCA5A01A038F44006AC871 /* MHMyTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACCA59F1A038F44006AC871 /* MHMyTestViewController.m */; };
+		0ACCA5A31A0391E1006AC871 /* MHMyTestCustomTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACCA5A21A0391E1006AC871 /* MHMyTestCustomTabBarController.m */; };
+		0ACCA5B01A041388006AC871 /* MHChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ACCA5AF1A041388006AC871 /* MHChildViewController.m */; };
 		C5E8BBEE173BA58C00F2C540 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E8BBED173BA58C00F2C540 /* UIKit.framework */; };
 		C5E8BBF0173BA58C00F2C540 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E8BBEF173BA58C00F2C540 /* Foundation.framework */; };
 		C5E8BBF2173BA58C00F2C540 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5E8BBF1173BA58C00F2C540 /* CoreGraphics.framework */; };
@@ -22,6 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0ACCA59E1A038F44006AC871 /* MHMyTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHMyTestViewController.h; sourceTree = "<group>"; };
+		0ACCA59F1A038F44006AC871 /* MHMyTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHMyTestViewController.m; sourceTree = "<group>"; };
+		0ACCA5A11A0391E1006AC871 /* MHMyTestCustomTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHMyTestCustomTabBarController.h; sourceTree = "<group>"; };
+		0ACCA5A21A0391E1006AC871 /* MHMyTestCustomTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHMyTestCustomTabBarController.m; sourceTree = "<group>"; };
+		0ACCA5AE1A041388006AC871 /* MHChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHChildViewController.h; sourceTree = "<group>"; };
+		0ACCA5AF1A041388006AC871 /* MHChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHChildViewController.m; sourceTree = "<group>"; };
 		C5E8BBEA173BA58C00F2C540 /* MHCustomTabBarControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MHCustomTabBarControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5E8BBED173BA58C00F2C540 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C5E8BBEF173BA58C00F2C540 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -94,6 +103,10 @@
 				C5E8BBFD173BA58C00F2C540 /* AppDelegate.m */,
 				C5E8BC05173BA58C00F2C540 /* MainStoryboard.storyboard */,
 				C5E8BBF4173BA58C00F2C540 /* Supporting Files */,
+				0ACCA59E1A038F44006AC871 /* MHMyTestViewController.h */,
+				0ACCA59F1A038F44006AC871 /* MHMyTestViewController.m */,
+				0ACCA5A11A0391E1006AC871 /* MHMyTestCustomTabBarController.h */,
+				0ACCA5A21A0391E1006AC871 /* MHMyTestCustomTabBarController.m */,
 			);
 			path = MHCustomTabBarControllerDemo;
 			sourceTree = "<group>";
@@ -119,6 +132,8 @@
 				C5E8BC12173BA5BC00F2C540 /* MHCustomTabBarController.m */,
 				C5E8BC13173BA5BC00F2C540 /* MHTabBarSegue.h */,
 				C5E8BC14173BA5BC00F2C540 /* MHTabBarSegue.m */,
+				0ACCA5AE1A041388006AC871 /* MHChildViewController.h */,
+				0ACCA5AF1A041388006AC871 /* MHChildViewController.m */,
 			);
 			path = MHCustomTabBarController;
 			sourceTree = "<group>";
@@ -207,6 +222,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ACCA5A31A0391E1006AC871 /* MHMyTestCustomTabBarController.m in Sources */,
+				0ACCA5B01A041388006AC871 /* MHChildViewController.m in Sources */,
+				0ACCA5A01A038F44006AC871 /* MHMyTestViewController.m in Sources */,
 				C5E8BBFA173BA58C00F2C540 /* main.m in Sources */,
 				C5E8BBFE173BA58C00F2C540 /* AppDelegate.m in Sources */,
 				C5E8BC15173BA5BC00F2C540 /* MHCustomTabBarController.m in Sources */,
@@ -327,6 +345,7 @@
 				GCC_PREFIX_HEADER = "MHCustomTabBarControllerDemo/MHCustomTabBarControllerDemo-Prefix.pch";
 				INFOPLIST_FILE = "MHCustomTabBarControllerDemo/MHCustomTabBarControllerDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;
@@ -340,6 +359,7 @@
 				GCC_PREFIX_HEADER = "MHCustomTabBarControllerDemo/MHCustomTabBarControllerDemo-Prefix.pch";
 				INFOPLIST_FILE = "MHCustomTabBarControllerDemo/MHCustomTabBarControllerDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				WRAPPER_EXTENSION = app;

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MHChildViewController.h"
 
-@interface MHMyTestViewController : UIViewController
+@interface MHMyTestViewController : MHChildViewController
 
 @end

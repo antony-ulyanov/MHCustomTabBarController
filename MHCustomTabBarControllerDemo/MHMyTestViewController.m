@@ -7,8 +7,12 @@
 //
 
 #import "MHMyTestViewController.h"
+#import "MHMyTestCustomTabBarController.h"
+#import "MHChildViewController.h"
 
 @interface MHMyTestViewController ()
+
+@property(weak, nonatomic) IBOutlet UILabel *parentLabel;
 
 @end
 
@@ -16,22 +20,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    MHMyTestCustomTabBarController *parentController = (MHMyTestCustomTabBarController *) self.parent;
+    _parentLabel.text = parentController.myTestField;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

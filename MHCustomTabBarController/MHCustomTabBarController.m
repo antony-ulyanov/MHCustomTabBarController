@@ -23,13 +23,14 @@
 #import "MHCustomTabBarController.h"
 
 #import "MHTabBarSegue.h"
+#import "MHChildViewController.h"
 
 NSString *const MHCustomTabBarControllerViewControllerChangedNotification = @"MHCustomTabBarControllerViewControllerChangedNotification";
 NSString *const MHCustomTabBarControllerViewControllerAlreadyVisibleNotification = @"MHCustomTabBarControllerViewControllerAlreadyVisibleNotification";
 
 @interface MHCustomTabBarController ()
 
-@property (nonatomic, strong) NSMutableDictionary *viewControllersByIdentifier;
+@property(nonatomic, strong) NSMutableDictionary *viewControllersByIdentifier;
 
 @end
 
@@ -37,13 +38,13 @@ NSString *const MHCustomTabBarControllerViewControllerAlreadyVisibleNotification
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.viewControllersByIdentifier = [NSMutableDictionary dictionary];
 }
 
--(void) viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+
     if (self.childViewControllers.count < 1) {
         [self performSegueWithIdentifier:@"viewController1" sender:[self.buttons objectAtIndex:0]];
     }
@@ -54,35 +55,34 @@ NSString *const MHCustomTabBarControllerViewControllerAlreadyVisibleNotification
 }
 
 
-
 #pragma mark - Segue
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-   
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+
     if (![segue isKindOfClass:[MHTabBarSegue class]]) {
         [super prepareForSegue:segue sender:sender];
         return;
     }
-    
+
     self.oldViewController = self.destinationViewController;
-    
+
     //if view controller isn't already contained in the viewControllers-Dictionary
     if (![self.viewControllersByIdentifier objectForKey:segue.identifier]) {
         [self.viewControllersByIdentifier setObject:segue.destinationViewController forKey:segue.identifier];
     }
-    
+
     for (UIButton *aButton in self.buttons) {
         [aButton setSelected:NO];
     }
-        
-    UIButton *button = (UIButton *)sender;
+
+    UIButton *button = (UIButton *) sender;
     [button setSelected:YES];
     self.destinationIdentifier = segue.identifier;
     self.destinationViewController = [self.viewControllersByIdentifier objectForKey:self.destinationIdentifier];
-    
-    [[NSNotificationCenter defaultCenter] postNotificationName:MHCustomTabBarControllerViewControllerChangedNotification object:nil]; 
+    self.destinationViewController.parent = self;
+    [[NSNotificationCenter defaultCenter] postNotificationName:MHCustomTabBarControllerViewControllerChangedNotification object:nil];
 
-    
+
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
@@ -91,7 +91,7 @@ NSString *const MHCustomTabBarControllerViewControllerAlreadyVisibleNotification
         [[NSNotificationCenter defaultCenter] postNotificationName:MHCustomTabBarControllerViewControllerAlreadyVisibleNotification object:nil];
         return NO;
     }
-    
+
     return YES;
 }
 

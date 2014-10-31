@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MHCustomTabBarController.h"
 
-@interface MHMyTestCustomTabBarController : UIViewController
+@interface MHMyTestCustomTabBarController : MHCustomTabBarController
+
+@property(nonatomic, strong) NSString *myTestField;
 
 @end

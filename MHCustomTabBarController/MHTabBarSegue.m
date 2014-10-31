@@ -22,10 +22,11 @@
 
 #import "MHTabBarSegue.h"
 #import "MHCustomTabBarController.h"
+#import "MHChildViewController.h"
 
 @implementation MHTabBarSegue
-- (void) perform {
-    MHCustomTabBarController *tabBarViewController = (MHCustomTabBarController *)self.sourceViewController;
+- (void)perform {
+    MHCustomTabBarController *tabBarViewController = (MHCustomTabBarController *) self.sourceViewController;
     UIViewController *destinationViewController = (UIViewController *) tabBarViewController.destinationViewController;
 
     //remove old viewController
@@ -34,8 +35,8 @@
         [tabBarViewController.oldViewController.view removeFromSuperview];
         [tabBarViewController.oldViewController removeFromParentViewController];
     }
-    
-    
+
+
     destinationViewController.view.frame = tabBarViewController.container.bounds;
     [tabBarViewController addChildViewController:destinationViewController];
     [tabBarViewController.container addSubview:destinationViewController.view];

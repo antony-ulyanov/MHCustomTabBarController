@@ -7,6 +7,7 @@
 //
 
 #import "MHChildViewController.h"
+#import "MHCustomTabBarController.h"
 
 @implementation MHChildViewController
 

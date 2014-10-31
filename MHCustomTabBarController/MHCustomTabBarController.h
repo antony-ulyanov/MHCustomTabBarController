@@ -22,15 +22,17 @@
 
 #import <UIKit/UIKit.h>
 
+@class MHChildViewController;
+
 extern NSString *const MHCustomTabBarControllerViewControllerChangedNotification;
 extern NSString *const MHCustomTabBarControllerViewControllerAlreadyVisibleNotification;
 
 @interface MHCustomTabBarController : UIViewController
 
-@property (weak,nonatomic) UIViewController *destinationViewController;
-@property (strong, nonatomic) NSString *destinationIdentifier;
-@property (strong, nonatomic) UIViewController *oldViewController;
-@property (weak, nonatomic) IBOutlet UIView *container;
-@property (nonatomic) IBOutletCollection(UIButton) NSArray *buttons;
+@property(weak, nonatomic) MHChildViewController *destinationViewController;
+@property(strong, nonatomic) NSString *destinationIdentifier;
+@property(strong, nonatomic) MHChildViewController *oldViewController;
+@property(weak, nonatomic) IBOutlet UIView *container;
+@property(nonatomic) IBOutletCollection(UIButton) NSArray *buttons;
 
 @end
