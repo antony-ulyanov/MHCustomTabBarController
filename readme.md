@@ -30,12 +30,17 @@ Hook up the outlets in MHCustomTabBarController with your created views in the s
 
 ![](https://raw.github.com/mhaddl/MHCustomTabBarController/screenshots/screenshots/Screenshot%20on%202013-05-09%20at%2018.17.54.png)
 
-Place your desired ViewControllers into the storyboard and connect them with a UIButton in the CustomTabBarController. Give the created segues identifiers matching this scheme:
+Place your desired ViewControllers into the storyboard. Inherite it from MHChildViewController and connect them with a UIButton in the CustomTabBarController. Give the created segues identifiers matching this scheme:
 * initial, first ViewController = "viewController1"
 * second ViewController = "viewController2"
 + ...
 
 Set the style of the segues to "custom" and the class to "MHTabBarSegue".
+
+### Changes.
+
+There was added property "parent" to MHChildViewController to get MHCustomTabBarController. Now you can inherite your own view controller from MHCustomTabBarController,
+add some properties and able to get it in child view controllers. This needed to push data to child view controllers.
 
 ## License
 
