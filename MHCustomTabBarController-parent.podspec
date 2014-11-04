@@ -5,15 +5,15 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '6.0'
   s.summary      = 'Custom UITabBar replacement using storyboard and segues.'
   s.license      = 'MIT'
-  s.homepage     = 'https://github.com/antony-ulyanov/MHCustomTabBarController'
+  s.homepage     = 'https://github.com/antony-ulyanov/MHCustomTabBarController-parent'
   s.requires_arc = true
   s.author = {
-    "Martin Hartl" => "martin@mhaddl.me",
-    "Anton Ulyanov" => "rumburu@gmail.com"
+    'Martin Hartl' => 'martin@mhaddl.me',
+    'Anton Ulyanov' => 'rumburu@gmail.com'
   }
   s.source = {
-    :git => 'https://github.com/antony-ulyanov/MHCustomTabBarController.git',
+    :git => 'https://github.com/antony-ulyanov/MHCustomTabBarController-parent.git',
     :tag => 'v1.3.0'
   }
-  s.source_files = 'MHCustomTabBarController/*.{m,h}'
+  s.source_files = 'MHCustomTabBarController-parent/*.{m,h}'
 end
