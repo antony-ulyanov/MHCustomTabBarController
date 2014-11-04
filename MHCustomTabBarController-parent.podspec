@@ -8,10 +8,11 @@ Pod::Spec.new do |s|
   s.homepage     = 'https://github.com/antony-ulyanov/MHCustomTabBarController'
   s.requires_arc = true
   s.author = {
-    'Anton Ulyanov' => 'rumburu@gmail.com'
+    "Martin Hartl" => "martin@mhaddl.me",
+    "Anton Ulyanov" => "rumburu@gmail.com"
   }
   s.source = {
-    :git => 'https://github.com/antony-ulyanov/MHCustomTabBarController',
+    :git => 'https://github.com/antony-ulyanov/MHCustomTabBarController.git',
     :tag => 'v1.3.0'
   }
   s.source_files = 'MHCustomTabBarController/*.{m,h}'
